@@ -1,6 +1,6 @@
 class Contact
   attr_accessor :first_name, :last_name, :email, :note
-  attr_reader :id,
+  attr_reader :id
 
   @@contacts = []
   @@next_id = 1000
@@ -72,6 +72,7 @@ class Contact
         end
       end
       nil
+    end
     if attribute == "last_name"
       @@contacts.each do |contact|
         if value == contact.last_name
@@ -79,6 +80,7 @@ class Contact
         end
       end
       nil
+    end
     if attribute == "email"
       @@contacts.each do |contact|
         if value == contact.email
@@ -86,6 +88,7 @@ class Contact
         end
       end
       nil
+    end
     if attribute == "note"
       @@contacts.each do |contact|
         if value == contact.note
@@ -93,6 +96,7 @@ class Contact
         end
       end
       nil
+    end
   end
 
   # This method should delete all of the contacts
