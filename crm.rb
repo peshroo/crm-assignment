@@ -1,3 +1,5 @@
+require_relative 'contact.rb'
+
 class CRM
 
   def initialize
@@ -29,11 +31,11 @@ class CRM
   end
 
   def display_all_contacts
-    
+
   end
 
   def search_by_attribute
-    
+
   end
 
 
