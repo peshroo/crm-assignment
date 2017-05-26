@@ -22,8 +22,8 @@ class Contact
 
   # This method should call the initializer,
   # store the newly created contact, and then return it
-  def self.create(first_name, last_name, email)
-    new_contact = Contact.new(first_name, last_name, email)
+  def self.create(first_name, last_name, email, note)
+    new_contact = Contact.new(first_name, last_name, email, note)
     @@contacts << new_contact
     return new_contact
   end
@@ -36,12 +36,11 @@ class Contact
   # and return the contact who has that id
   def self.find(id)
     # exercise for reader
-    individ_contact = nil
     @@contacts.each do |contact|
       if id == contact.id
-        individ_contact = contact
-        end
+        return contact
       end
+    end
   end
 
   # This method should allow you to specify
@@ -54,9 +53,9 @@ class Contact
     elsif attribute == "last_name"
       self.last_name = value
     elsif attribute == "email"
-      self.email == value
+      self.email = value
     elsif attribute == "note"
-      self.note == vlaue
+      self.note = value
     end
   end
 
@@ -101,15 +100,17 @@ class Contact
 
   # This method should delete all of the contacts
   def self.delete_all
-    @@contacts.delete_all
+    @@contacts.clear
   end
 
 
   # This method should delete the contact
   # HINT: Check the Array class docs for built-in methods that might be useful here
   def delete
-    @@contacts.delete_at(self)
+    @@contacts.delete(self)
   end
+
+
 
   # Feel free to add other methods here, if you need them.
 
